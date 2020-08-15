@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The evolving Harris current sheet model // Zach Beever</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    
+
+        <meta property="og:title" content="The evolving Harris current sheet model" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://zbeever.github.io/posts/2020-08-15_harris_current_sheet/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://zbeever.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://zbeever.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://zbeever.github.io/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://zbeever.github.io/">Zach Beever</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">The evolving Harris current sheet model</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/posts/2020-08-15_harris_current_sheet/" class="article-date">
+                <time datetime='2020-08-15T12:57:55.000-04:00' itemprop="datePublished">2020-08-15</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>In many space physics papers investigating nonadiabatic current sheet scattering, the
+simplified Harris model is used. In Cartesian coordinates, it takes on the simple form</p>
+<p>$$\mathbf{B} = B_x\tanh\Big(\frac{z}{L}\Big)\hat{\mathbf{i}} + 0\hat{\mathbf{j}} + B_z\hat{\mathbf{k}}$$</p>
+<p>where \(L\) parameterizes the current sheet thickness. This is nice approximation
+for a relatively static magnetosphere, but it doesn&rsquo;t capture a thinning current sheet.
+For that, we&rsquo;ll need to make the change \(L=L(t)\). In turn, this will induce an
+electric field. What is the expression for that field?</p>
+<h3 id="deriving-the-induced-electric-field">Deriving the induced electric field</h3>
+<p>The induced electric field is described by</p>
+<p>$$\nabla\times{\mathbf{E}} = -\frac{\partial\mathbf{B}}{\partial t}.$$</p>
+<p>The time derivative of the magnetic field is</p>
+<p>$$\frac{\partial\mathbf{B}}{\partial t} = B_x\mathrm{sech}^2\Big(\frac{z}{L(t)}\Big)\cdot\Big({-\frac{z}{L^2(t)}}\Big)\cdot\dot{L}(t)\hat{\mathbf{i}}$$</p>
+<p>and so the only nonzero component of the curl equation is</p>
+<p>$$\frac{\partial E_z}{\partial y} - \frac{\partial E_y}{\partial z} = -B_x\mathrm{sech}^2\Big(\frac{z}{L(t)}\Big)\cdot\frac{z}{L^2(t)}\cdot\dot{L}(t).$$</p>
+<p>Because the Harris model has no component along the \(y\)-axis and doesn&rsquo;t depend
+on the \(y\) coordinate, \(\frac{\partial E_z}{\partial y} = 0\) by symmetry. There
+is no such restriction for \(E_y\), and so we may integrate to find<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>$$E_y(z) = \int_{-\infty}^z B_x\mathrm{sech}^2\Big(\frac{z}{L(t)}\Big)\cdot\frac{z}{L^2(t)}\cdot\dot{L}(t)\mathrm{d}z.$$</p>
+<p>Setting \(u = z/L(t)\) and \(\mathrm{d}u = \mathrm{d}z/L(t)\), this simplifies to</p>
+<p>$$E_y(z) = B_x\dot{L}(t)\int_{-\infty}^{z/L(t)}\mathrm{sech}^2(u)\cdot u\mathrm{d}u.$$</p>
+<p>We can integrate this by parts to get</p>
+<p>$$E_y(z) = B_x\dot{L}(t)\Big(u\tanh(u)\Big|_{-\infty}^{z/L(t)} - \int_{-\infty}^{z/L(t)}\tanh(u)\mathrm{d}u\Big).$$</p>
+<p>The remaining integral can be rewritten as</p>
+<p>$$\int_{-\infty}^{z/L(t)}\tanh(u)\mathrm{d}u = \int_{-\infty}^{z/L(t)}\frac{\sinh(u)}{\cosh(u)}\mathrm{d}u = \int_{-\infty}^{z/L(t)}\mathrm{d}(\ln{\cosh(u)}) = \ln\cosh u\Big|_{-\infty}^{z/L(t)}.$$</p>
+<p>Using the above, \(E_y(z)\) becomes</p>
+<p>$$E_y(z) = B_x\dot{L}(t)\Big[\frac{z}{L(t)}\tanh\Big(\frac{z}{L(t)}\Big)- \ln\cosh\Big(\frac{z}{L(t)} \Big) + C\Big]$$</p>
+<p>where \(C\) is given by</p>
+<p>$$C = \lim_{u\to{-\infty}}\ln\cosh u - u\tanh u.$$</p>
+<p>Since, by defintion, \(\cosh u = \frac{e^u + e^{-u}}{2}\) and \(\tanh u = \frac{e^u - e^{-u}}{e^u + e^{-u}}\), we can rewrite \(C\) as</p>
+<p>$$\begin{aligned}
+C &amp;= \lim_{u\to{-\infty}}\ln\frac{e^{-u}}{2} + u\frac{e^{-u}}{e^{-u}} \\ \\ &amp;= \lim_{u\to-\infty}-u + u - \ln 2 \\ \\ &amp;= {-\ln 2}
+\end{aligned}$$</p>
+<p>The final expression for the induced field is given by</p>
+<p>$$\mathbf{E}(z, t) = B_x\dot{L}(t)\Big[\frac{z}{L(t)}\tanh\Big(\frac{z}{L(t)}\Big)- \ln\cosh\Big(\frac{z}{L(t)} \Big) - \ln 2\Big]\hat{\mathbf{j}}$$</p>
+<p>A question remains: the Harris model is formulated as an equilibrium solution to the Vlasov
+equation. Is a time-dependent model physical? Intuitively, one would venture yes as long as
+\(\dot{L}(t)\) is sufficiently slow. Certainly the above result captures the real
+\(y\)-directed current found in the magnetosphere, so it is at least on the right track.</p>
+<h3 id="finding-the-field-lines">Finding the field lines</h3>
+<p>The lines of force of a field are useful visualizations. Can we find an expression
+for the field lines of the Harris current sheet?</p>
+<p>The vector potential is defined (up to the addition of a gradient) by</p>
+<p>$$\nabla \times {\mathbf{A}} = \mathbf{B}.$$</p>
+<p>In component form, this is</p>
+<p>$$\begin{aligned}
+\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z} &amp;= B_x\tanh\Big(\frac{z}{L(t)}\Big) \\ \\ \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x} &amp;= 0 \\ \\ \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y} &amp;= B_z
+\end{aligned}$$</p>
+<p>By the same argument as in the last section, \(\mathbf{A}\) must be independent of \(y\),
+and so these further reduce to</p>
+<p>$$\begin{aligned}
+\frac{\partial A_y}{\partial z} &amp;= -B_x\tanh\Big(\frac{z}{L(t)}\Big) \\ \\ \frac{\partial A_y}{\partial x} &amp;= B_z
+\end{aligned}$$</p>
+<p>Integrating gives</p>
+<p>$$\mathbf{A}(x, z, t) = \Big[{-B_xL(t)}\ln\cosh\Big(\frac{z}{L(t)}\Big)+B_zx\Big]\hat{\mathbf{j}}$$</p>
+<p>It is well known that we can express the vector potential in terms of two scalar functions
+\(\alpha\), \(\beta\) such that<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>$$\mathbf{A} = \alpha\nabla{\beta},$$</p>
+<p>or, equivalently,</p>
+<p>$$\mathbf{B} = \nabla{\alpha}\times\nabla{\beta}.$$</p>
+<p>This second expression lends itself to a particularly nice geometrical interpretation: since
+the gradient of a function is orthogonal to the level sets of that function, \(\mathbf{B}\)
+must be directed along the intersection of the two implicit surfaces described by</p>
+<p>$$\begin{aligned}
+\alpha(x, y, z) &amp;= \alpha_0 \\ \\ \beta(x, y, z) &amp;= \beta_0
+\end{aligned}$$</p>
+<p>In the simple case of the Harris model, we can write these scalar functions by inspection,</p>
+<p>$$\begin{aligned}
+\alpha(x, z) &amp;= -B_xL(t)\ln\cosh\Big(\frac{z}{L(t)}\Big) + B_zx \\ \\ \beta(y) &amp;= y
+\end{aligned}$$</p>
+<p>Of course, these are not unique: we could add a constant to \(\alpha\) or any term \(g\)
+to \(\beta\) that satisifes \(\frac{\partial g}{\partial x} = -\frac{\partial g}{\partial z}\).
+In any case, for the surfaces described by \(\alpha = \alpha_0\) and \(\beta = \beta_0\), our
+field lines are given by</p>
+<p>$$\begin{aligned}
+x &amp;= \frac{\alpha_0}{B_z} + \frac{B_x}{B_z}L(t)\ln\cosh\Big(\frac{z}{L(t)}\Big) \\ \\ y &amp;= \beta_0
+\end{aligned}$$</p>
+<h3 id="forced-mirroring">Forced mirroring</h3>
+<p>When the above model is used in a single particle simulation, there are only two qualitatively
+distinct trajectories: those that become trapped in the current sheet and those that exit. In the
+magnetosphere, particles that exit from the current sheet have the chance to return for another
+interaction &mdash; provided they have not been scattered into the loss cone. To simulate multiple
+current sheet crossings, we can strengthen the magnetic field far from the \(x\)-\(y\) plane
+to force particle mirroring.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<p>A modification that enables this behavior is</p>
+<p>$$\mathbf{B}(x, z, t) = \Big[B_x\tanh\Big(\frac{z}{L(t)}\Big) + B_{\lambda}e^{-\lambda}\sinh^{2\gamma - 1}\Big(\frac{z}{R_E}\Big)\Big]\hat{\mathbf{i}} + B_z\hat{\mathbf{k}}.$$</p>
+<p>where \(\lambda \gg 1\) and \(\gamma \in \mathbb{N}\). This modification strengthens the
+magnetic field while maintaining the property \(\nabla\cdot{\mathbf{B}}=0\).</p>
+<p>Through testing, \(\lambda \approx 40\) and \(\gamma = 1 \) yield decent results when
+\(B_\lambda = 1\). With this value, \(|\mathbf{B}|\) begins to appreciably strengthen
+around \(z \approx \pm 20 R_E\).</p>
+<p>While this modification leaves the current sheet unchanged, the field lines far from the \(x\)-\(y\)
+plane experience a large deformation. The vector potential becomes</p>
+<p>$$\mathbf{A}(x, z, t) =  \Big[{-B_xL(t)}\ln\cosh\Big(\frac{z}{L(t)}\Big) - B_\lambda R_E e^{-\lambda}\cosh\Big(\frac{z}{R_E}\Big) + B_zx\Big]\hat{\mathbf{j}}$$</p>
+<p>and so the obvious choices for the Euler potentials are</p>
+<p>$$\begin{aligned}
+\alpha(x, z) &amp;= -B_xL(t)\ln\cosh\Big(\frac{z}{L(t)}\Big) - B_\lambda R_E e^{-\lambda}\cosh\Big(\frac{z}{R_E}\Big) + B_zx \\ \\ \beta(y) &amp;= y
+\end{aligned}$$</p>
+<p>The field lines are then described by</p>
+<p>$$\begin{aligned}
+x &amp;= \frac{\alpha_0}{B_z} + \frac{B_x}{B_z}L(t)\ln\cosh\Big(\frac{z}{L(t)}\Big) + \frac{B_x}{B_\lambda}R_E e^{-\lambda}\cosh\Big(\frac{z}{R_E}\Big) \\ \\ y &amp;= \beta_0
+\end{aligned}$$</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The limits of integration are chosen so that the entire field contributes to \(E_y\) at the given \(z\). We arrive at the same result whether we set the lower limit to \(\infty\) or \(-\infty\). <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>These are known as Euler potentials. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>This won&rsquo;t change the nonadiabatic scattering of the particles as this is a region of high adiabaticity. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#deriving-the-induced-electric-field">Deriving the induced electric field</a></li>
+        <li><a href="#finding-the-field-lines">Finding the field lines</a></li>
+        <li><a href="#forced-mirroring">Forced mirroring</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/space-physics">space-physics
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/electromagnetism">electromagnetism
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    
+    <a href="/posts/2020-08-15_leibniz_isochronous_curve/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">A derivation of the Leibniz isochronous curve&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 Zach Beever
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
+        <script>renderMathInElement(document.body);</script>
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

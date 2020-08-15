@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Zach Beever</title>
-    <link>https://zbeever.github.io/posts/</link>
-    <description>Recent content in Posts on Zach Beever</description>
+    <title>space-physics on Zach Beever</title>
+    <link>https://zbeever.github.io/tags/space-physics/</link>
+    <description>Recent content in space-physics on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Aug 2020 12:57:55 -0400</lastBuildDate>
     
-	<atom:link href="https://zbeever.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zbeever.github.io/tags/space-physics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,18 +20,6 @@
       <description>In many space physics papers investigating nonadiabatic current sheet scattering, the simplified Harris model is used. In Cartesian coordinates, it takes on the simple form
 $$\mathbf{B} = B_x\tanh\Big(\frac{z}{L}\Big)\hat{\mathbf{i}} + 0\hat{\mathbf{j}} + B_z\hat{\mathbf{k}}$$
 where \(L\) parameterizes the current sheet thickness. This is nice approximation for a relatively static magnetosphere, but it doesn&amp;rsquo;t capture a thinning current sheet. For that, we&amp;rsquo;ll need to make the change \(L=L(t)\). In turn, this will induce an electric field.</description>
-    </item>
-    
-    <item>
-      <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</link>
-      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
-      
-      <guid>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</guid>
-      <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
-$$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
-where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
-The Lagrangian approach is usually emphasized when there are obvious constraints, so let&amp;rsquo;s try that method here.</description>
     </item>
     
   </channel>
