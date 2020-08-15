@@ -13,10 +13,10 @@
     
     <item>
       <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</link>
+      <link>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</link>
       <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
       
-      <guid>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</guid>
+      <guid>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</guid>
       <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
 $$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
 where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
