@@ -6,9 +6,46 @@
     <description>Recent content in Tags on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 15 Aug 2020 12:43:36 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>lagrangian</title>
+      <link>https://zbeever.github.io/tags/lagrangian/</link>
+      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/tags/lagrangian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mathematics</title>
+      <link>https://zbeever.github.io/tags/mathematics/</link>
+      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/tags/mathematics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>physics</title>
+      <link>https://zbeever.github.io/tags/physics/</link>
+      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/tags/physics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>variational-methods</title>
+      <link>https://zbeever.github.io/tags/variational-methods/</link>
+      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/tags/variational-methods/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

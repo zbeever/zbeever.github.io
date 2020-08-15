@@ -3,15 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zbeever.github.io/categories/</loc>
+    <loc>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/tags/lagrangian/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/tags/mathematics/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/tags/physics/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/posts/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://zbeever.github.io/tags/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/tags/variational-methods/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://zbeever.github.io/</loc>
+    <lastmod>2020-08-15T12:43:36-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zbeever.github.io/categories/</loc>
   </url>
   
 </urlset>

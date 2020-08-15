@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A derivation of the Leibniz isochronous curve // Zach Beever</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    
+    
+    
+
+        <meta property="og:title" content="A derivation of the Leibniz isochronous curve" />
+    <meta property="og:description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://zbeever.github.io/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://zbeever.github.io/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://zbeever.github.io/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.74.3" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://zbeever.github.io/">Zach Beever</a>
+            <nav id="main-nav">
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">A derivation of the Leibniz isochronous curve</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/posts/2015-08-15_leibniz_isochronous_curve/" class="article-date">
+                <time datetime='2020-08-15T12:43:36.000-04:00' itemprop="datePublished">2020-08-15</time>
+            </a>
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve.
+In words, this is the trajectory a frictionless object would follow if its vertical
+velocity was left unchanged by a constant, downward force. Using the standard
+\(x\)-\(y\) Cartesian axes, the curve is parameterized by</p>
+<p>$$\begin{aligned}x &amp;= x(t)\\y &amp;= -v_0t\end{aligned}$$</p>
+<p>where \(v_0\) is positive. What is the exact expression for \(x(t)\)?</p>
+<p>The Lagrangian approach is usually emphasized when there are obvious constraints,
+so let&rsquo;s try that method here. Lets assume the trajectory can be written
+\(x = x(y(t))\).</p>
+<p>Using the usual \(\mathcal{L} = T - V\) for a point mass under the influence of gravity, we have</p>
+<p>$$\begin{aligned}
+\mathcal{L} &amp;= \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) - mgy \\ \\ &amp;= \frac{1}{2}m\dot{y}^2\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big) - mgy
+\end{aligned}$$</p>
+<p>The partial derivatives of this with respect to \(y\) and \(\dot{y}\) are</p>
+<p>$$\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial y} &amp;= m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} - mg \\ \\ \frac{\partial\mathcal{L}}{\partial \dot{y}} &amp;= m\dot{y}\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big)
+\end{aligned}$$</p>
+<p>and so the full Euler-Lagrange equation is</p>
+<p>$$m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} - mg - m\ddot{y}\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big) - 2m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} = 0.$$</p>
+<p>There are a few things we can do to simplify this. For one, we can combine the first and last terms. On top of that, \(\dot{y} = -v_0\) and \(\ddot{y} = 0\). We also see that</p>
+<p>$$ \frac{\mathrm{d}}{\mathrm{d}y} = \frac{\mathrm{d}t}{\mathrm{d}y}\frac{\mathrm{d}}{\mathrm{d}t} = -\frac{1}{v_0}\frac{\mathrm{d}}{\mathrm{d}t}.$$</p>
+<p>Making the above substitutions (and writing everything in terms of \(x\) and \(t\)) reduces the Euler-Lagrange equation to</p>
+<p>$$-mv_0^2\cdot\frac{\dot{x}}{-v_0}\cdot\frac{\ddot{x}}{v_0^2} - mg = 0.$$</p>
+<p>Canceling common factors and rewriting \(\dot{x}\ddot{x}\) as \(\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x})^2\) further simplifies this to</p>
+<p>$$\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x}^2) = gv_0$$</p>
+<p>which can be easily integrated to get</p>
+<p>$$\dot{x}^2 = 2gv_0t.$$</p>
+<p>We can take the square root and integrate again to arrive at</p>
+<p>$$x(t) = \frac{2}{3}\sqrt{2gv_ot^3}.$$</p>
+<p>We&rsquo;re done! For ease of plotting, we can rewrite \(t\) in terms of \(y\) to get</p>
+<p>$$y^3 = -\frac{9}{8}\frac{v_0^2}{g}x^2$$</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/mathematics">mathematics
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/physics">physics
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/variational-methods">variational-methods
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://zbeever.github.io//tags/lagrangian">lagrangian
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2020 Zach Beever
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous"></script>
+        <script>renderMathInElement(document.body);</script>
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
