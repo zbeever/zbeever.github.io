@@ -17,7 +17,7 @@
       <pubDate>Sat, 15 Aug 2020 12:57:55 -0400</pubDate>
       
       <guid>https://zbeever.github.io/post/2020-08-15_harris-current-sheet/</guid>
-      <description>In many space physics papers investigating nonadiabatic current sheet scattering, the simplified Harris model is used. In Cartesian coordinates, it takes on the simple form
+      <description>In many space physics papers investigating nonadiabatic current sheet scattering, the simplified Harris model is used. In Cartesian coordinates, it takes on the form
 $$\mathbf{B} = B_x\tanh\Big(\frac{z}{L}\Big)\hat{\mathbf{i}} + 0\hat{\mathbf{j}} + B_z\hat{\mathbf{k}}$$
 where \(L\) parameterizes the current sheet thickness. This is nice approximation for a relatively static magnetosphere, but it doesn&amp;rsquo;t capture a thinning current sheet. For that, we&amp;rsquo;ll need to make the change \(L=L(t)\). In turn, this will induce an electric field. What is the expression for that field?
 Prerequisites: To understand this post you&amp;rsquo;ll need to be familiar with Maxwell&amp;rsquo;s equations. To understand the motivation of this post, familiarity with basic space plasma physics and the structure of the magnetosphere is necessary.</description>

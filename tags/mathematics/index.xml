@@ -5,22 +5,22 @@
     <link>https://zbeever.github.io/tags/mathematics/</link>
     <description>Recent content in mathematics on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2020 12:43:36 -0400</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Sun, 16 Aug 2020 05:15:31 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</link>
-      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      <title>The prisoner problem (no, not that one)</title>
+      <link>https://zbeever.github.io/post/2020-08-16_prisoner-problem/</link>
+      <pubDate>Sun, 16 Aug 2020 05:15:31 -0400</pubDate>
       
-      <guid>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</guid>
-      <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
-$$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
-where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
-The Lagrangian approach is usually emphasized when there are obvious constraints, so let&amp;rsquo;s try that method here.</description>
+      <guid>https://zbeever.github.io/post/2020-08-16_prisoner-problem/</guid>
+      <description>During her Master&amp;rsquo;s program, my girlfriend signed up for a Putnam Competition preparation course. She doesn&amp;rsquo;t have a background in math, but she thought it would be fun&amp;mdash;and it was! There were lots of interesting practice problems we solved together and this was my favorite.
+Prerequisites: To understand this post, you should have some knowledge of modular arithmetic.
+Recommended Reading: The Putnam Competition website.
+The setup Imagine a room with \(N\) prisoners. They are going to play a game for their freedom. They can talk amongst themselves and come up with a strategy before the game starts, but as soon as it begins they are immobile and unable to communicate.</description>
     </item>
     
   </channel>
