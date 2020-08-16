@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>space-physics on Zach Beever</title>
-    <link>https://zbeever.github.io/tags/space-physics/</link>
-    <description>Recent content in space-physics on Zach Beever</description>
+    <title>Posts on Zach Beever</title>
+    <link>https://zbeever.github.io/post/</link>
+    <description>Recent content in Posts on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 15 Aug 2020 12:57:55 -0400</lastBuildDate>
     
-	<atom:link href="https://zbeever.github.io/tags/space-physics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zbeever.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,6 +21,19 @@
 $$\mathbf{B} = B_x\tanh\Big(\frac{z}{L}\Big)\hat{\mathbf{i}} + 0\hat{\mathbf{j}} + B_z\hat{\mathbf{k}}$$
 where \(L\) parameterizes the current sheet thickness. This is nice approximation for a relatively static magnetosphere, but it doesn&amp;rsquo;t capture a thinning current sheet. For that, we&amp;rsquo;ll need to make the change \(L=L(t)\). In turn, this will induce an electric field. What is the expression for that field?
 Prerequisites: To understand this post you&amp;rsquo;ll need to be familiar with Maxwell&amp;rsquo;s equations. To understand the motivation of this post, familiarity with basic space plasma physics and the structure of the magnetosphere is necessary.</description>
+    </item>
+    
+    <item>
+      <title>A derivation of the Leibniz isochronous curve</title>
+      <link>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</link>
+      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</guid>
+      <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
+$$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
+where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
+Prerequisites: To understand this post you&amp;rsquo;ll need to be comfortable with the Lagrangian formulation of classical mechanics.
+Recommended Reading: The Variational Principles of Mechanics by Cornelius Lanczos. The Theoretical Minimum by George Hrabovsky and Leonard Susskind.</description>
     </item>
     
   </channel>

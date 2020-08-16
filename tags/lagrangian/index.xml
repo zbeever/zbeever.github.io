@@ -5,7 +5,7 @@
     <link>https://zbeever.github.io/tags/lagrangian/</link>
     <description>Recent content in lagrangian on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <lastBuildDate>Sat, 15 Aug 2020 12:43:36 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/lagrangian/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,15 @@
     
     <item>
       <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</link>
+      <link>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</link>
       <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
       
-      <guid>https://zbeever.github.io/posts/2020-08-15_leibniz_isochronous_curve/</guid>
+      <guid>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</guid>
       <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
 $$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
 where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
-The Lagrangian approach is usually emphasized when there are obvious constraints, so let&amp;rsquo;s try that method here.</description>
+Prerequisites: To understand this post you&amp;rsquo;ll need to be comfortable with the Lagrangian formulation of classical mechanics.
+Recommended Reading: The Variational Principles of Mechanics by Cornelius Lanczos. The Theoretical Minimum by George Hrabovsky and Leonard Susskind.</description>
     </item>
     
   </channel>

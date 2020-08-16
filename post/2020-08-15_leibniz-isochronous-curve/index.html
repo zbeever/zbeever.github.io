@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme=""><head>
-    <title> Zach Beever | electromagnetism </title>
+    <title> Zach Beever | A derivation of the Leibniz isochronous curve </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="MS Electrical Engineering Student at Boston University">
     
@@ -10,14 +10,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://zbeever.github.io/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://zbeever.github.io/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://zbeever.github.io/favicons/favicon-16x16.png">
-    <link rel="canonical" href="https://zbeever.github.io/tags/electromagnetism/">
-    <link rel="alternate" type="application/rss+xml" href="https://zbeever.github.io/tags/electromagnetism/index.xml" title="Zach Beever" />
+    <link rel="canonical" href="https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/">
     
     
     <script type="text/javascript" src="https://zbeever.github.io/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="electromagnetism"/>
-<meta name="twitter:description" content="MS Electrical Engineering Student at Boston University"/>
+<meta name="twitter:title" content="A derivation of the Leibniz isochronous curve"/>
+<meta name="twitter:description" content="Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
+$$\begin{aligned}x &amp;= x(t)\\y &amp;= -v_0t\end{aligned}$$
+where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
+Prerequisites: To understand this post you&rsquo;ll need to be comfortable with the Lagrangian formulation of classical mechanics.
+Recommended Reading: The Variational Principles of Mechanics by Cornelius Lanczos. The Theoretical Minimum by George Hrabovsky and Leonard Susskind."/>
 
 </head>
 <body><div class="sidebar animated fadeInDown">
@@ -88,22 +91,71 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>A derivation of the Leibniz isochronous curve
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Sat, Aug 15, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">2-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>Recently, a <a href="https://horenbergerb.github.io/">friend of mine</a> shared with me the idea of the Leibniz isochronous curve.
+In words, this is the trajectory a frictionless object would follow if its vertical
+velocity was left unchanged by a constant, downward force. Using the standard
+\(x\)-\(y\) Cartesian axes, the curve is parameterized by</p>
+<p>$$\begin{aligned}x &amp;= x(t)\\y &amp;= -v_0t\end{aligned}$$</p>
+<p>where \(v_0\) is positive. What is the exact expression for \(x(t)\)?</p>
+<p><em>Prerequisites:</em> To understand this post you&rsquo;ll need to be comfortable with the Lagrangian formulation of classical mechanics.</p>
+<p><em>Recommended Reading:</em> <a href="https://archive.org/details/VariationalPrinciplesOfMechanicsLanczos">The Variational Principles of Mechanics</a> by Cornelius Lanczos. <a href="https://theoreticalminimum.com/references">The Theoretical Minimum</a> by George Hrabovsky and Leonard Susskind. The Wikipedia page on <a href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian Mechanics</a>.</p>
+<h3 id="the-derivation">The derivation</h3>
+<p>The Lagrangian approach is usually emphasized when there are obvious constraints,
+so let&rsquo;s try that method here. Lets assume the trajectory can be written
+\(x = x(y(t))\).</p>
+<p>Using the usual \(\mathcal{L} = T - V\) for a point mass under the influence of gravity, we have</p>
+<p>$$\begin{aligned}
+\mathcal{L} &amp;= \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) - mgy \\ \\ &amp;= \frac{1}{2}m\dot{y}^2\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big) - mgy
+\end{aligned}$$</p>
+<p>The partial derivatives of this with respect to \(y\) and \(\dot{y}\) are</p>
+<p>$$\begin{aligned}
+\frac{\partial\mathcal{L}}{\partial y} &amp;= m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} - mg \\ \\ \frac{\partial\mathcal{L}}{\partial \dot{y}} &amp;= m\dot{y}\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big)
+\end{aligned}$$</p>
+<p>and so the full Euler-Lagrange equation is</p>
+<p>$$m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} - mg - m\ddot{y}\Big(\Big(\frac{\mathrm{d}x}{\mathrm{d}y}\Big)^2 + 1\Big) - 2m\dot{y}^2\frac{\mathrm{d}x}{\mathrm{d}y}\frac{\mathrm{d}^2x}{\mathrm{d}y^2} = 0.$$</p>
+<p>There are a few things we can do to simplify this. For one, we can combine the first and last terms. On top of that, \(\dot{y} = -v_0\) and \(\ddot{y} = 0\). We also see that</p>
+<p>$$ \frac{\mathrm{d}}{\mathrm{d}y} = \frac{\mathrm{d}t}{\mathrm{d}y}\frac{\mathrm{d}}{\mathrm{d}t} = -\frac{1}{v_0}\frac{\mathrm{d}}{\mathrm{d}t}.$$</p>
+<p>Making the above substitutions (and writing everything in terms of \(x\) and \(t\)) reduces the Euler-Lagrange equation to</p>
+<p>$$-mv_0^2\cdot\frac{\dot{x}}{-v_0}\cdot\frac{\ddot{x}}{v_0^2} - mg = 0.$$</p>
+<p>Canceling common factors and rewriting \(\dot{x}\ddot{x}\) as \(\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x})^2\) further simplifies this to</p>
+<p>$$\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x}^2) = gv_0$$</p>
+<p>which can be easily integrated to get</p>
+<p>$$\dot{x}^2 = 2gv_0t.$$</p>
+<p>We can take the square root and integrate again to arrive at</p>
+<p>$$x(t) = \frac{2}{3}\sqrt{2gv_ot^3}.$$</p>
+<p>We&rsquo;re done! For ease of plotting, we can rewrite \(t\) in terms of \(y\) to get</p>
+<p>$$y^3 = -\frac{9}{8}\frac{v_0^2}{g}x^2$$</p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+    <span class="separator"><a class="tag" href="/tags/mechanics/">mechanics</a><a class="tag" href="/tags/lagrangian/">lagrangian</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2020</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://zbeever.github.io/post/2020-08-15_harris-current-sheet/" title="The evolving Harris current sheet model">The evolving Harris current sheet model</a>
-              <div class="post-time"><span class="date">Aug 15</span></div>
-            </div>
-          </div>
-    </ul>
     
-    
-  </div>
+</div>
+
 
                 </div>
             </div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>index on Zach Beever</title>
+    <link>https://zbeever.github.io/tags/index/</link>
+    <description>Recent content in index on Zach Beever</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	<atom:link href="https://zbeever.github.io/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Posts</title>
+      <link>https://zbeever.github.io/post/</link>
+      <pubDate>Sat, 15 Aug 2020 12:57:55 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/post/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
