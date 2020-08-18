@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lagrangian on Zach Beever</title>
-    <link>https://zbeever.github.io/tags/lagrangian/</link>
-    <description>Recent content in lagrangian on Zach Beever</description>
+    <title>hamiltonian on Zach Beever</title>
+    <link>https://zbeever.github.io/tags/hamiltonian/</link>
+    <description>Recent content in hamiltonian on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 18 Aug 2020 15:03:00 +0000</lastBuildDate>
     
-	<atom:link href="https://zbeever.github.io/tags/lagrangian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zbeever.github.io/tags/hamiltonian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,19 +19,6 @@
       <guid>https://zbeever.github.io/post/2020-08-18_geometry-of-mechanics/</guid>
       <description>If you&amp;rsquo;ve spent time with analytical mechanics, you&amp;rsquo;ve probably stumbled upon the concept of a symplectic manifold. In particular, you&amp;rsquo;ve probably heard how Hamiltonian mechanics is naturally described by a symplectic manifold. Unfortunately, many sources explaining why this is so are opaque to the uninitiated or painfully slow to get to the point. I&amp;rsquo;ll try to outline the geometric picture of mechanics using a combination of qualitative and quantitative arguments.
 Prerequisites: To understand this post, you should be comfortable with differential geometry and its two most popular notations: indicial notation and coordinate-free notation. You should also be familiar with Lagrangian and Hamiltonian mechanics and the Poisson bracket formalism.</description>
-    </item>
-    
-    <item>
-      <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</link>
-      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
-      
-      <guid>https://zbeever.github.io/post/2020-08-15_leibniz-isochronous-curve/</guid>
-      <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
-$$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
-where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
-Prerequisites: To understand this post you&amp;rsquo;ll need to be comfortable with the Lagrangian formulation of classical mechanics.
-Recommended Reading: The Variational Principles of Mechanics by Cornelius Lanczos. The Theoretical Minimum by George Hrabovsky and Leonard Susskind.</description>
     </item>
     
   </channel>

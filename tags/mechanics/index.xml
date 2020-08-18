@@ -6,10 +6,20 @@
     <description>Recent content in mechanics on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Aug 2020 12:43:36 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2020 15:03:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/mechanics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The geometry of mechanics</title>
+      <link>https://zbeever.github.io/post/2020-08-18_geometry-of-mechanics/</link>
+      <pubDate>Tue, 18 Aug 2020 15:03:00 +0000</pubDate>
+      
+      <guid>https://zbeever.github.io/post/2020-08-18_geometry-of-mechanics/</guid>
+      <description>If you&amp;rsquo;ve spent time with analytical mechanics, you&amp;rsquo;ve probably stumbled upon the concept of a symplectic manifold. In particular, you&amp;rsquo;ve probably heard how Hamiltonian mechanics is naturally described by a symplectic manifold. Unfortunately, many sources explaining why this is so are opaque to the uninitiated or painfully slow to get to the point. I&amp;rsquo;ll try to outline the geometric picture of mechanics using a combination of qualitative and quantitative arguments.
+Prerequisites: To understand this post, you should be comfortable with differential geometry and its two most popular notations: indicial notation and coordinate-free notation. You should also be familiar with Lagrangian and Hamiltonian mechanics and the Poisson bracket formalism.</description>
+    </item>
     
     <item>
       <title>A derivation of the Leibniz isochronous curve</title>
