@@ -17,8 +17,8 @@
       <pubDate>Tue, 18 Aug 2020 15:03:00 +0000</pubDate>
       
       <guid>https://zbeever.github.io/post/2020-08-18_geometry-of-mechanics/</guid>
-      <description>If you&amp;rsquo;ve spent time with analytical mechanics, you&amp;rsquo;ve probably stumbled upon the concept of a symplectic manifold. In particular, you&amp;rsquo;ve probably heard how Hamiltonian mechanics is naturally described by a symplectic manifold. Unfortunately, many sources explaining why this is so are opaque to the uninitiated or painfully slow to get to the point. I&amp;rsquo;ll try to outline the geometric picture of mechanics using a combination of qualitative and quantitative arguments.
-Prerequisites: To understand this post, you should be comfortable with differential geometry and its two most popular notations: indicial notation and coordinate-free notation. You should also be familiar with Lagrangian and Hamiltonian mechanics and the Poisson bracket formalism.</description>
+      <description>If you&amp;rsquo;ve spent time with analytical mechanics, you&amp;rsquo;ve probably stumbled upon the concept of a symplectic manifold. In particular, you&amp;rsquo;ve probably heard how Hamiltonian mechanics is naturally described by a symplectic manifold. Unfortunately, many sources explaining why this is so are opaque to the uninitiated or painfully slow to get to the point. I&amp;rsquo;ll try to outline the geometric picture of mechanics using a combination of qualitative and quantitative arguments. This borrows quite a bit from Henry Cohn&amp;rsquo;s note on the topic, so I recommend you check it out.
+Prerequisites: To understand this post, you should be comfortable with differential geometry and its two most popular notations: indicial notation and coordinate-free notation.</description>
     </item>
     
     <item>
