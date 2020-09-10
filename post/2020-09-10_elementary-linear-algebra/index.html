@@ -136,7 +136,7 @@ by the assumption that \(V_n\) spans \(V\) we could write
 $$ u_{n+1} = \alpha_1u_1 + \cdots + \alpha_nu_n,$$
 for at least one nonzero \(\alpha_i\). This would contradict the assumption that \(U\) is linearly independent. Therefore, given an \(n\)-element spanning set of a vector space, we can find at most \(n\) linearly independent vectors within that space. \(\square\)</p>
 <p>An immediate consequence of this is that all linearly independent sets that span the same vector space \(V\) contain the same number of elements. We call such a set a basis.</p>
-<h3 id="the-relationship-between-determinant-trace-and-eigenvalues">The relationship between determinant, trace, and eigenvalues</h3>
+<h3 id="on-eigenvalues">On eigenvalues</h3>
 <p><strong>Lemma</strong>: <em>The determinant of a matrix is given by the product of its eigenvalues.</em></p>
 <p>The eigenvalues \(s_i\) of a matrix \(\mathbf{A}\) satisfy</p>
 <p>$$\det(\mathbf{A} - s\mathbf{I}) = 0.$$</p>
@@ -157,6 +157,12 @@ In this form, the eigenvalues appear along the main diagonal and so it is eviden
 <p>but by the above observation this is the same as</p>
 <p>$$\mathrm{Tr}(\mathbf{A}\mathbf{P}^{-1}\mathbf{P}) = \mathrm{Tr}(\mathbf{A})$$</p>
 <p>and the lemma is proved. \(\square\)</p>
+<p><strong>Lemma</strong>: Given an \(n \times n\) matrix \(\mathbf{A}\) with a complete and distinct set of eigenvalues \(s_i\), the associated eigenvectors \(\mathbf{e}_i\) form a linearly independent set.</p>
+<p>Assume the set of eigenvectors is linearly dependent. Then at least one eigenvector \(\mathbf{e}_j\) can be expressed as a linear combination of the \(n - 1\) remaining eigenvectors. Explicitly, this means</p>
+<p>$$\mathbf{A}\mathbf{e}_j = \mathbf{A}\sum_{k\neq j} \alpha_k \mathbf{e}_k = \sum_{k\neq j}s_k\alpha_k\mathbf{e}_k.$$</p>
+<p>Simultaneously, by the nature of eigenvectors, we also have</p>
+<p>$$\mathbf{A}\mathbf{e}_j = s_j\mathbf{e}_j = s_j\sum_{k\neq j}\alpha_k\mathbf{e}_k.$$</p>
+<p>In order for these two expression to be equal, \(s_k = s_j\) for all \(k \neq j\). This contradicts the assumption that the eigenvalues \(s_i\) are distinct, proving the lemma. \(\square\)</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
