@@ -6,10 +6,22 @@
     <description>Recent content in mathematics on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 16 Aug 2020 05:15:31 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2020 09:00:00 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/mathematics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Some proofs in elementary linear algebra</title>
+      <link>https://zbeever.github.io/post/2020-09-10_elementary-linear-algebra/</link>
+      <pubDate>Thu, 10 Sep 2020 09:00:00 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/post/2020-09-10_elementary-linear-algebra/</guid>
+      <description>This semester, a controls class I&amp;rsquo;m enrolled in has promised to be proof-based. Writing proofs is not a muscle I exercise often, so I figured it would be best to get back into things with some proofs of elementary theorems in linear algebra. This is not going to be a particularly exciting post&amp;mdash;it&amp;rsquo;s mainly done for the benefit of myself.
+Prerequisites: To understand this post, you should be familiar with linear algebra.
+Recommended Reading: Linear Algebra Done Right by Sheldon Axler. Finite Dimensional Linear Systems by Roger Brockett.
+Linear dependence and span Theorem: Given a vector space \(V\) over a field \(\mathbb{F}\) and a spanning set \(V_0 = \lbrace v_1, \dots, v_n\rbrace\) with \(v_i \in V\) for \(i = 1,\dots,n\), an arbitrary linearly indepdendent set of vectors \(U = \lbrace u_1, \dots, u_k\rbrace\) with \(u_j\in V\) for \(j=1,\dots,k\) has at most \(n\) elements.</description>
+    </item>
     
     <item>
       <title>The prisoner problem (no, not that one)</title>

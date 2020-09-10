@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Zach Beever | Some proofs in elementary linear algebra </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="MS Electrical Engineering Student at Boston University">
+    
+    <link rel="stylesheet" href="https://zbeever.github.io/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://zbeever.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://zbeever.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://zbeever.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://zbeever.github.io/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://zbeever.github.io/post/2020-09-10_elementary-linear-algebra/">
+    
+    
+    <script type="text/javascript" src="https://zbeever.github.io/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Some proofs in elementary linear algebra"/>
+<meta name="twitter:description" content="This semester, a controls class I&rsquo;m enrolled in has promised to be proof-based. Writing proofs is not a muscle I exercise often, so I figured it would be best to get back into things with some proofs of elementary theorems in linear algebra. This is not going to be a particularly exciting post&mdash;it&rsquo;s mainly done for the benefit of myself.
+Prerequisites: To understand this post, you should be familiar with linear algebra.
+Recommended Reading: Linear Algebra Done Right by Sheldon Axler. Finite Dimensional Linear Systems by Roger Brockett.
+Linear dependence and span Theorem: Given a vector space \(V\) over a field \(\mathbb{F}\) and a spanning set \(V_0 = \lbrace v_1, \dots, v_n\rbrace\) with \(v_i \in V\) for \(i = 1,\dots,n\), an arbitrary linearly indepdendent set of vectors \(U = \lbrace u_1, \dots, u_k\rbrace\) with \(u_j\in V\) for \(j=1,\dots,k\) has at most \(n\) elements."/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="https://zbeever.github.io/images/profile.png" alt="profile picture">
+        <h3 title=""><a href="/">Zach Beever</a></h3>
+        <div class="description">
+          <p>MS Electrical Engineering Student at Boston University</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        
+        <li>
+        <a href="https://www.linkedin.com/in/zach-beever/" rel="me" aria-label="Linkedin">
+          <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="https://github.com/zbeever/" rel="me" aria-label="GitHub">
+          <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="mailto:zbeever@bu.edu" rel="me" aria-label="e-mail">
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Zach Beever 2020 </div>
+      </div>
+    </div>
+</div><div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/" title="">Home</a></li>
+        
+        
+        <li><a  href="/post/" title="">Posts</a></li>
+        
+        
+        <li><a  href="/about/" title="">About</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>Some proofs in elementary linear algebra
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Thu, Sep 10, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">4-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>This semester, a controls class I&rsquo;m enrolled in has promised to be proof-based. Writing proofs is not a
+muscle I exercise often, so I figured it would be best to get back into things with some
+proofs of elementary theorems in linear algebra. This is not going to be a particularly exciting post&mdash;it&rsquo;s mainly done for the benefit of myself.</p>
+<p><em>Prerequisites:</em> To understand this post, you should be familiar with linear algebra.</p>
+<p><em>Recommended Reading:</em> <a href="http://linear.axler.net/">Linear Algebra Done Right</a>
+by Sheldon Axler. <a href="https://epubs.siam.org/doi/book/10.1137/1.9781611973884?mobileUi=0&amp;">Finite Dimensional Linear Systems</a>
+by Roger Brockett.</p>
+<h3 id="linear-dependence-and-span">Linear dependence and span</h3>
+<p><strong>Theorem</strong>: <em>Given a vector space \(V\) over a field \(\mathbb{F}\) and a spanning set \(V_0 = \lbrace v_1, \dots, v_n\rbrace\) with \(v_i \in V\) for \(i = 1,\dots,n\), an arbitrary linearly
+indepdendent set of vectors \(U = \lbrace u_1, \dots, u_k\rbrace\) with \(u_j\in V\) for \(j=1,\dots,k\) has at most \(n\) elements.</em></p>
+<p>Because the set \(V_0\) spans \(V\), we may express \(u_1\) in terms of the \(n\) vectors in \(V_0\),
+$$ u_1 = \beta_1v_1 + \cdots + \beta_nv_n $$
+where \(\beta_i\in\mathbb{F}\) are not all zero. Equivalently, we may express \(v_1\) in terms of \(v_2, \dots, v_n\) and \(u_1\) via<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+$$v_1 = \alpha_1u_1 + \beta_2v_2 + \cdots + \beta_nv_n$$
+and so we may replace \(v_1\) in \(V_0\) with \(u_1\) and still span \(V\). We will define this new spanning set by
+$$V_1 = \lbrace u_1, v_1, \dots, v_n \rbrace.$$
+More generally, let
+$$V_k = \lbrace u_1, \dots, u_k, v_{k+1}, \dots, v_n\rbrace$$
+and assume it spans \(V\). Because this is a spanning set, we may write \(u_{k+1}\) in terms of the \(n\) vectors in \(V_k\) as
+$$ u_{k+1}= \alpha_1u_1 + \cdots + \alpha_ku_k + \beta_{k+1}v_{k+1} + \cdots + \beta_nv_n.$$
+Since the vectors \(u_i\) are linearly independent, the above expression must have at least one nonzero \(\beta_i\). Renaming the associated element \(v_{k+1}\), we can write
+$$v_{k+1}= \alpha_1u_1 + \cdots + \alpha_ku_k + \alpha_{k+1}u_{k+1}+\beta_{k+2}v_{k+2} + \cdots + \beta_nv_n$$
+and thus replace \(v_{k+1}\) with \(u_{k+1}\) to make a new spanning set
+$$V_{k+1}= \lbrace u_1, \dots, u_k, u_{k+1}, v_{k+2}, \dots, v_n\rbrace$$
+By induction, this process continues until we reach
+$$V_n = \lbrace u_1, \dots, u_n \rbrace$$
+and so the maximum number of elements in our linearly independent set \(U\) is \(n\). Were this not the case, then
+by the assumption that \(V_n\) spans \(V\) we could write
+$$ u_{n+1} = \alpha_1u_1 + \cdots + \alpha_nu_n,$$
+for at least one nonzero \(\alpha_i\). This would contradict the assumption that \(U\) is linearly independent. Therefore, given an \(n\)-element spanning set of a vector space, we can find at most \(n\) linearly independent vectors within that space. \(\square\)</p>
+<p>An immediate consequence of this is that all linearly independent sets that span the same vector space \(V\) contain the same number of elements. We call such a set a basis.</p>
+<h3 id="the-relationship-between-determinant-trace-and-eigenvalues">The relationship between determinant, trace, and eigenvalues</h3>
+<p><strong>Lemma</strong>: <em>The determinant of a matrix is given by the product of its eigenvalues.</em></p>
+<p>The eigenvalues \(s_i\) of a matrix \(\mathbf{A}\) satisfy</p>
+<p>$$\det(\mathbf{A} - s\mathbf{I}) = 0.$$</p>
+<p>This is a polynomial equation, and so by the fundamental theorem of algebra may be factored as</p>
+<p>$$ \prod_{i} (s_i - s) = 0$$</p>
+<p>where \(s_i \in \mathbb{C}\). From this, we see that</p>
+<p>$$ \det(\mathbf{A}) = \lim_{s\to0}\det(\mathbf{A} - s\mathbf{I}) = \lim_{s\to0}\prod_{i}(s_i - s) = \prod_{i}s_i$$</p>
+<p>i.e. the determinant of \(\mathbf{A}\) is given by the product of its eigenvalues. \(\square\)</p>
+<p><strong>Lemma</strong>: <em>The trace of a matrix is given by the sum of its eigenvalues.</em></p>
+<p>We begin by noticing that the trace of a product of three matrices is unchanged by a cyclic permutation<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, i.e.</p>
+<p>$$\mathrm{Tr}(\mathbf{A}\mathbf{B}\mathbf{C}) = \mathrm{Tr}(\mathbf{B}\mathbf{C}\mathbf{A}) = \mathrm{Tr}(\mathbf{C}\mathbf{A}\mathbf{B}).$$</p>
+<p>This is easily seen by framing the trace in indicial notation, in which case we have \(\mathrm{Tr}(\mathbf{A}) = {A^i}_i\) and so</p>
+<p>$${A^i}_j{B^j}_k{C^k}_i = {B^j}_k{C^k}_i{A^i}_j = {C^k}_i{A^i}_j{B^j}_k$$</p>
+<p>where we have employed the Einstein summation convention.</p>
+<p>We may put any matrix \(\mathbf{A}\) into Jordan normal form using a similarity transformation \(\mathbf{P}\mathbf{A}\mathbf{P}^{-1}\).
+In this form, the eigenvalues appear along the main diagonal and so it is evident that</p>
+<p>$$\mathrm{Tr}(\mathbf{P}\mathbf{A}\mathbf{P}^{-1}) = \sum_{i}s_i,$$</p>
+<p>but by the above observation this is the same as</p>
+<p>$$\mathrm{Tr}(\mathbf{A}\mathbf{P}^{-1}\mathbf{P}) = \mathrm{Tr}(\mathbf{A})$$</p>
+<p>and the lemma is proved. \(\square\)</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>All of these &rsquo;re-expressions&rsquo; involve possible relabellings. That is, the \(u_i\)s and \(\beta_i\)s in one step need not be the same \(u_i\)s and \(\beta_i\)s in the next. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>More generally, the trace of the product of any number of matrices is invariant under cyclic permutation. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+    <span class="separator"><a class="tag" href="/tags/mathematics/">mathematics</a></span>
+
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+<script type="text/javascript" src="https://zbeever.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://zbeever.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://zbeever.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script></html></body>
+
+</html>
