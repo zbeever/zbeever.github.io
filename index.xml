@@ -6,10 +6,22 @@
     <description>Recent content on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 10 Sep 2020 09:00:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 12:57:55 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Fourier transform of the Heaviside step function</title>
+      <link>https://zbeever.github.io/post/2020-09-16_fourier-transform-of-unit-step/</link>
+      <pubDate>Wed, 16 Sep 2020 12:57:55 -0400</pubDate>
+      
+      <guid>https://zbeever.github.io/post/2020-09-16_fourier-transform-of-unit-step/</guid>
+      <description>The Heaviside step function shows up just about everywhere, with its integral representation and Fourier transform often cropping up in quantum field theory and signal processing. These expressions often lack explanation, so the purpose of this post is to illuminate their origins.
+Prerequisites: To understand this post you&amp;rsquo;ll need to have a passing familiarity with Fourier transforms, distributions, and complex analysis.
+Recommended Reading: This excellent answer by user Patch on the math StackExchange.
+The naive approach As we know, the Fourier transform \(\tilde{f}(k)\) of a function \(f(x)\) is given by $$\tilde{f}(k) = \int_{-\infty}^{\infty}f(x)e^{-ikx}\mathrm{d}x$$ This problem isn&amp;rsquo;t hard&amp;mdash;presumably, the transform of the Heaviside function is defined as $$\tilde{\theta}(k) = \int_{-\infty}^{\infty}\theta(x)e^{-ikx}\mathrm{d}x.</description>
+    </item>
     
     <item>
       <title>Some proofs in elementary linear algebra</title>

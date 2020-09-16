@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme=""><head>
+    <title> Zach Beever | The Fourier transform of the Heaviside step function </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.74.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="MS Electrical Engineering Student at Boston University">
+    
+    <link rel="stylesheet" href="https://zbeever.github.io/css/style.min.5be3a155aa89a24586c761b1b5538c4040e3735ee32ac12a708dc1696c0982f5.css" integrity="sha256-W&#43;OhVaqJokWGx2GxtVOMQEDjc17jKsEqcI3BaWwJgvU=" crossorigin="anonymous" type="text/css"><link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
+    <link rel="shortcut icon" href="https://zbeever.github.io/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://zbeever.github.io/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://zbeever.github.io/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://zbeever.github.io/favicons/favicon-16x16.png">
+    <link rel="canonical" href="https://zbeever.github.io/post/2020-09-16_fourier-transform-of-unit-step/">
+    
+    
+    <script type="text/javascript" src="https://zbeever.github.io/js/anatole-header.min.7e2fc0724240b28c6e214687e73a4a6eb6c196bbace546b9dc86e94cca120b5c.js" integrity="sha256-fi/AckJAsoxuIUaH5zpKbrbBlrus5Ua53IbpTMoSC1w=" crossorigin="anonymous"></script>
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Fourier transform of the Heaviside step function"/>
+<meta name="twitter:description" content="The Heaviside step function shows up just about everywhere, with its integral representation and Fourier transform often cropping up in quantum field theory and signal processing. These expressions often lack explanation, so the purpose of this post is to illuminate their origins.
+Prerequisites: To understand this post you&rsquo;ll need to have a passing familiarity with Fourier transforms, distributions, and complex analysis.
+Recommended Reading: This excellent answer by user Patch on the math StackExchange.
+The naive approach As we know, the Fourier transform \(\tilde{f}(k)\) of a function \(f(x)\) is given by $$\tilde{f}(k) = \int_{-\infty}^{\infty}f(x)e^{-ikx}\mathrm{d}x$$ This problem isn&rsquo;t hard&mdash;presumably, the transform of the Heaviside function is defined as $$\tilde{\theta}(k) = \int_{-\infty}^{\infty}\theta(x)e^{-ikx}\mathrm{d}x."/>
+
+</head>
+<body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="https://zbeever.github.io/images/profile.png" alt="profile picture">
+        <h3 title=""><a href="/">Zach Beever</a></h3>
+        <div class="description">
+          <p>MS Electrical Engineering Student at Boston University</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        
+        <li>
+        <a href="https://www.linkedin.com/in/zach-beever/" rel="me" aria-label="Linkedin">
+          <i class="fa fa-2x fa-linkedin" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="https://github.com/zbeever/" rel="me" aria-label="GitHub">
+          <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+        <li>
+        <a href="mailto:zbeever@bu.edu" rel="me" aria-label="e-mail">
+          <i class="fa fa-2x fa-envelope" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Zach Beever 2020 </div>
+      </div>
+    </div>
+</div><div class="main">
+            <div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    <ul class="nav" id="navMenu">
+        
+        
+        
+        <li><a  href="/" title="">Home</a></li>
+        
+        
+        <li><a  href="/post/" title="">Posts</a></li>
+        
+        
+        <li><a  href="/about/" title="">About</a></li>
+        
+        
+        <li class="theme-switch-item">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+        </li>
+    </ul>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>The Fourier transform of the Heaviside step function
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i>
+          <span class="date">Wed, Sep 16, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">4-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>The Heaviside step function shows up just about everywhere, with its integral representation and Fourier transform
+often cropping up in quantum field theory and signal processing. These expressions often lack explanation, so the
+purpose of this post is to illuminate their origins.</p>
+<p><em>Prerequisites:</em>
+To understand this post you&rsquo;ll need to have a passing familiarity with Fourier transforms, distributions, and complex analysis.</p>
+<p><em>Recommended Reading:</em> <a href="https://math.stackexchange.com/questions/269809/heaviside-step-function-fourier-transform-and-principal-values">This excellent answer</a>
+by user Patch on the math StackExchange.</p>
+<h3 id="the-naive-approach">The naive approach</h3>
+<p>As we know, the Fourier transform \(\tilde{f}(k)\) of a function \(f(x)\) is given by
+$$\tilde{f}(k) = \int_{-\infty}^{\infty}f(x)e^{-ikx}\mathrm{d}x$$
+This problem isn&rsquo;t hard&mdash;presumably, the transform of the Heaviside function is defined as
+$$\tilde{\theta}(k) = \int_{-\infty}^{\infty}\theta(x)e^{-ikx}\mathrm{d}x.$$
+However, there&rsquo;s a problem with this: the above integral does not converge. Explicitly, we have
+$$\int_{-\infty}^{\infty}\theta(x)e^{-ikx}\mathrm{d}x = \lim_{a\to\infty}\int_0^ae^{-ikx}\mathrm{d}x = \lim_{a\to\infty}\frac{e^{-ikx}}{-ik}\Big|_{0}^{a} = \lim_{a\to\infty}\frac{1}{ik}(1 - e^{-ika}).$$
+One way to skirt around this issue is to take the Fourier transform of something that is almost a step function,
+then take the limit until the two functions are one and the same. Let&rsquo;s try the replacement
+$$\theta(x) \to e^{-\varepsilon{x}}\theta(x)$$
+with \(\varepsilon &gt; 0\). With this new definition of \(\theta(x)\), the related Fourier transform becomes
+$$\begin{aligned}
+\tilde{\theta}(k) &amp;= \int_{-\infty}^{\infty}e^{-\varepsilon{x}}\theta(x)e^{-ikx}\mathrm{d}x \\ &amp;= \lim_{a\to\infty}\int_0^ae^{-x(\varepsilon + ik)}\mathrm{d}x \\ &amp;= \lim_{a\to\infty}\frac{e^{-x(\varepsilon + ik)}}{-(\varepsilon + ik)}\Big|_0^a \\ &amp;= \lim_{a\to\infty}\frac{1}{\varepsilon + ik}(1 - e^{-a(\varepsilon + ik)}) \\ &amp;= \frac{1}{\varepsilon + ik}
+\end{aligned}$$
+Presumably we could then take \(\lim_{\varepsilon\to0^+}\) to recover the true Fourier transform of the step function.
+But if that&rsquo;s the case, what&rsquo;s going on at \(k = 0\)?</p>
+<h3 id="distributions-and-test-functions">Distributions and test functions</h3>
+<p>The issue is that we&rsquo;re treating \(\theta(x)\) like a function, when really it&rsquo;s a distribution. From a
+physics or engineering point of view, this amounts to saying that \(\theta(x)\) is only defined when it&rsquo;s
+integrated against a test function, much like its cousin the Dirac delta \(\delta(x)\). Just as this
+later distribution is defined by<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+$$\int_{-\infty}^{\infty}\delta(x)f(x)\mathrm{d}x = f(0),$$
+the step &ldquo;function&rdquo; is defined by
+$$\int_{-\infty}^{\infty}\theta(x)f(x)\mathrm{d}x = \int_0^{\infty}f(x)\mathrm{d}x$$
+in this framework. So what does \(\tilde{\theta}(k)\) do when applied to a test function? Let&rsquo;s assume this test function lives in
+Schwartz space, which means its derivative decays rapidly. Then we have
+$$\int_{-\infty}^{\infty}\tilde{\theta}(k)f(k)\mathrm{d}k = \lim_{\varepsilon\to0^+}\int_{-\infty}^{\infty}\frac{1}{\varepsilon + ik}f(k)\mathrm{d}k = \lim_{\varepsilon\to0^+}\int_{-\infty}^{\infty}\frac{\varepsilon}{\varepsilon^2 + k^2}f(k) - \frac{ik}{\varepsilon^2 + k^2}f(k)\mathrm{d}k = \, ?$$</p>
+<p>We can break this into two integrals,
+$$\begin{aligned}
+\zeta_1 &amp;= \lim_{\varepsilon\to0^+}\int_{-\infty}^{\infty}\frac{\varepsilon}{\varepsilon^2+k^2}f(k)\mathrm{d}k \\ \zeta_2 &amp;= \lim_{\varepsilon\to0^+}-i\int_{-\infty}^{\infty}\frac{k}{\varepsilon^2 + k^2}f(k)\mathrm{d}k
+\end{aligned}$$
+Within \(\zeta_1\) we recognize \(\lim_{\varepsilon\to0^+}\varepsilon/(\varepsilon^2+k^2)\) as the scaled, nascent delta function \(\pi\delta(k)\), and so
+$$\zeta_1 = \int_{-\infty}^{\infty}\pi\delta(k)f(k)\mathrm{d}k = \pi f(0).$$
+For \(\zeta_2\), it helps to rewrite it as
+$$\zeta_2 = \lim_{\varepsilon\to0^+}-i\int_0^{\infty}\frac{kf(k) - kf(-k)}{\varepsilon^2 + k^2}\mathrm{d}k = -i\int_0^{\infty}\frac{f(k) - f(-k)}{k}\mathrm{d}k$$
+which is the distributional definition of (minus \(i\) times) the Cauchy principal value of \(1/x\), i.e.
+$$\zeta_2 = -i\Big[\mathrm{p.v.}\Big(\frac{1}{k}\Big)\Big](f).$$
+Combining these results gives the Fourier transform of the Heaviside step function
+$$\tilde{\theta}(k) = \pi\delta(k) - i\,\mathrm{p.v.}\frac{1}{k}$$</p>
+<h3 id="an-alternate-representation-of-thetax">An alternate representation of \(\theta(x)\)</h3>
+<p>We&rsquo;ve just found that
+$$\tilde{\theta}(k) = \lim_{\varepsilon\to0^+}\frac{1}{\varepsilon + ik} = \pi\delta(k) - i\,\mathrm{p.v.}\frac{1}{k}.$$
+If we substitute the first of these into the definition of the inverse Fourier transform, we find
+$$\theta(x) = \lim_{\varepsilon\to0^+}\frac{1}{2\pi}\int_{-\infty}^{\infty}\frac{e^{ikx}}{\varepsilon + ik}\mathrm{d}k = \lim_{\varepsilon\to0^+}\frac{-i}{2\pi}\int_{-\infty}^{\infty}\frac{e^{ikx}}{k - i\varepsilon}\mathrm{d}k$$
+This is an interesting expression. How exactly does this give rise to \(\theta(x)\)? Recall the
+<a href="https://en.wikipedia.org/wiki/Residue_theorem">residue theorem</a> from complex analysis. It says that
+a closed line integral in the complex plane is proportional to the sum of the residues of the poles
+\(a_k\) enclosed by the contour \(\Gamma\), i.e.
+$$\oint_{\Gamma}f(z)\mathrm{d}z = 2\pi i\sum_{k}\mathrm{Res}\big(f(a_k)\big)$$
+Now, the integrand in the above representation of \(\theta(x)\) has a single pole at
+\(k = i\varepsilon\) in the complex plane. Since this integrand is analytic, we may extend its
+domain to the \(\mathbb{C}\). Furthermore, we may replace the integral \(\int_{-\infty}^{\infty}\)
+with a contour integral enclosing half of the complex plane; when \(x &gt; 0\), the contour includes
+the real line and the upper semicircle at infinity. When \(x &lt; 0\), the contour includes the real
+line and the lower semicircle at infinity.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>Since the integrand contains no poles within the lower half of the complex plane, \(\theta(x) = 0\)
+for \(x &lt; 0\). This is no longer the case when the contour encloses the upper half of the plane. Since
+the residue of the integrand is \(1\) at the pole, we have
+$$\theta(x) = \lim_{\varepsilon\to0^+}\frac{-i}{2\pi}\oint_{\Gamma}\frac{e^{ikx}}{k - i\varepsilon}\mathrm{d}k = \frac{-i}{2\pi}\cdot2\pi i\,\mathrm{Res}\big(f(i\varepsilon)\big) = 1$$</p>
+<p>This representation of the step function (as a countour integral in the complex plane) is used
+to encode time ordering in the <a href="https://en.wikipedia.org/wiki/Propagator#Feynman_propagator">Feynman propagator</a>
+in quantum field theory.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>As an aside, \(\delta(x)\) and \(\theta(x)\) are related to each other via
+the distributional derivative \(\mathrm{d}\theta(x)/\mathrm{d}x = \delta(x)\). This
+means that for a valid test function \(g(x)\),
+$$\int_{-\infty}^{\infty}\theta(x)\frac{\mathrm{d}g(x)}{\mathrm{d}x}\mathrm{d}x = {-\int_{-\infty}^{\infty}\frac{\mathrm{d}\theta(x)}{\mathrm{d}x} g(x)\mathrm{d}x} = -\int_{-\infty}^{\infty}\delta(x)g(x)\mathrm{d}x = -g(0),$$
+or, equivalently,
+$$\int_{-\infty}^{\infty}\theta(x - y)\frac{\mathrm{d}g(y)}{\mathrm{d}y}\mathrm{d}y = -g(x)$$
+which is the usual relationship between the integral of a function and convolution with the Heaviside
+step function. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>These conditions are just applications of <a href="https://en.wikipedia.org/wiki/Jordan%27s_lemma">Jordan&rsquo;s lemma</a>. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+        
+    <span class="separator"><a class="tag" href="/tags/mathematics/">mathematics</a><a class="tag" href="/tags/physics/">physics</a></span>
+
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+<script type="text/javascript" src="https://zbeever.github.io/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin="anonymous"></script>
+
+
+
+
+<script type="text/javascript" src="https://zbeever.github.io/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://zbeever.github.io/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js" integrity="sha256-kvIchWEp&#43;ErrcZRZs&#43;asYhowMv17GAoYwE4dEgg/iro=" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script></html></body>
+
+</html>

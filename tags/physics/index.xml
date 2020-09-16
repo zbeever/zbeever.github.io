@@ -5,22 +5,22 @@
     <link>https://zbeever.github.io/tags/physics/</link>
     <description>Recent content in physics on Zach Beever</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 15 Aug 2020 12:43:36 -0400</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Sep 2020 12:57:55 -0400</lastBuildDate>
     
 	<atom:link href="https://zbeever.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A derivation of the Leibniz isochronous curve</title>
-      <link>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</link>
-      <pubDate>Sat, 15 Aug 2020 12:43:36 -0400</pubDate>
+      <title>The Fourier transform of the Heaviside step function</title>
+      <link>https://zbeever.github.io/post/2020-09-16_fourier-transform-of-unit-step/</link>
+      <pubDate>Wed, 16 Sep 2020 12:57:55 -0400</pubDate>
       
-      <guid>https://zbeever.github.io/posts/2015-08-15_leibniz_isochronous_curve/</guid>
-      <description>Recently, a friend of mine shared with me the idea of the Leibniz isochronous curve. In words, this is the trajectory a frictionless object would follow if its vertical velocity was left unchanged by a constant, downward force. Using the standard \(x\)-\(y\) Cartesian axes, the curve is parameterized by
-$$\begin{aligned}x &amp;amp;= x(t)\\y &amp;amp;= -v_0t\end{aligned}$$
-where \(v_0\) is positive. What is the exact expression for \(x(t)\)?
-The Lagrangian approach is usually emphasized when there are obvious constraints, so let&amp;rsquo;s try that method here.</description>
+      <guid>https://zbeever.github.io/post/2020-09-16_fourier-transform-of-unit-step/</guid>
+      <description>The Heaviside step function shows up just about everywhere, with its integral representation and Fourier transform often cropping up in quantum field theory and signal processing. These expressions often lack explanation, so the purpose of this post is to illuminate their origins.
+Prerequisites: To understand this post you&amp;rsquo;ll need to have a passing familiarity with Fourier transforms, distributions, and complex analysis.
+Recommended Reading: This excellent answer by user Patch on the math StackExchange.
+The naive approach As we know, the Fourier transform \(\tilde{f}(k)\) of a function \(f(x)\) is given by $$\tilde{f}(k) = \int_{-\infty}^{\infty}f(x)e^{-ikx}\mathrm{d}x$$ This problem isn&amp;rsquo;t hard&amp;mdash;presumably, the transform of the Heaviside function is defined as $$\tilde{\theta}(k) = \int_{-\infty}^{\infty}\theta(x)e^{-ikx}\mathrm{d}x.</description>
     </item>
     
   </channel>
